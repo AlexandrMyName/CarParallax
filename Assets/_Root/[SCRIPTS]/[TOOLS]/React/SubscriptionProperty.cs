@@ -11,7 +11,6 @@ namespace Tools.React
             get => _value;
             set
             {
-               
                 _value = value;
                 _action?.Invoke(_value);
                 

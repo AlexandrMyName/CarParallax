@@ -18,7 +18,7 @@ namespace Game.Controllers
             _rightMove = new SubscriptionProperty<float>();
 
             //////////////[GAME CONTROLLER]\\\\\\\\\\\\\\\\\
-            _carController = new CarController(profile, placeForUI);
+            _carController = new CarController(profile, _leftMove,_rightMove);
             _inputController = new InputController(profile, _leftMove, _rightMove);
             _backGroundController = new BackGroundController(_leftMove, _rightMove);
             AddController(_carController);
