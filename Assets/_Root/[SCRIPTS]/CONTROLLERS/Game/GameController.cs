@@ -11,6 +11,7 @@ namespace Game.Controllers
         private InputController _inputController;
         private BackGroundController _backGroundController;
         private CarController _carController;
+        private AbilityController _abilityController;
 
         public GameController(Profile profile, Transform placeForUI)
         {
@@ -21,9 +22,11 @@ namespace Game.Controllers
             _carController = new CarController(profile, _leftMove,_rightMove);
             _inputController = new InputController(profile, _leftMove, _rightMove);
             _backGroundController = new BackGroundController(_leftMove, _rightMove,profile);
+            _abilityController = new AbilityController(placeForUI, _carController, profile);
             AddController(_carController);
             AddController(_backGroundController);
             AddController(_inputController);
+            AddController(_abilityController);
         }
 
         

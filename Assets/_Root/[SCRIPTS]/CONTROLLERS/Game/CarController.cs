@@ -1,3 +1,4 @@
+using Configs.Inventory;
 using Game.Models;
 using Game.UI;
 using System.Collections;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace Game.Controllers
 {
-    internal class CarController : BaseController
+    internal class CarController : BaseController, IAbilityActivator
     {
         private readonly ResourcesPath _pathTool = new ResourcesPath("[PREFABS]/[VIEWS]/CarView");
 
@@ -18,6 +19,9 @@ namespace Game.Controllers
 
         private readonly IReadOnlySubscriptionProperty<float> _leftMove;
         private readonly IReadOnlySubscriptionProperty<float> _rightMove;
+
+        public GameObject ViewGameObject =>  _view.gameObject;
+
         public CarController(Profile profile, 
             IReadOnlySubscriptionProperty<float> leftMove,
             IReadOnlySubscriptionProperty<float> rightMove)
