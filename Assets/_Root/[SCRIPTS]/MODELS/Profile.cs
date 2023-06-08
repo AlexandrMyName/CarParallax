@@ -8,7 +8,7 @@ namespace Game.Models
     {
         public readonly SubscriptionProperty<GameState> _reactGameState;
         public readonly CarModel Car;
-        private readonly IInventory _inventory;
+        public readonly IInventory _inventory;
 
         public Profile(float speedCarSet, GameState stateEntyGame) : this(speedCarSet) => _reactGameState.Value = GameState.Menu;
 
@@ -16,8 +16,9 @@ namespace Game.Models
         public Profile(float speedCarSet)
         {
             _inventory = new InventoryModel();
+            Car = new CarModel(speedCarSet);
             _reactGameState = new SubscriptionProperty<GameState>();
-             Car = new CarModel(speedCarSet);
+            
 
         }
     }

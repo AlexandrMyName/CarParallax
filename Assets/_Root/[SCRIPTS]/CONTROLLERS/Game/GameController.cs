@@ -20,7 +20,7 @@ namespace Game.Controllers
             //////////////[GAME CONTROLLER]\\\\\\\\\\\\\\\\\
             _carController = new CarController(profile, _leftMove,_rightMove);
             _inputController = new InputController(profile, _leftMove, _rightMove);
-            _backGroundController = new BackGroundController(_leftMove, _rightMove);
+            _backGroundController = new BackGroundController(_leftMove, _rightMove,profile);
             AddController(_carController);
             AddController(_backGroundController);
             AddController(_inputController);

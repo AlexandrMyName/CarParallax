@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+ 
 
 namespace Game.Inventory
 {
@@ -8,9 +8,15 @@ namespace Game.Inventory
         private readonly List <string> _itemsID;
         public IReadOnlyList<string> Items => _itemsID;
 
+
+        public InventoryModel()
+        {
+            _itemsID = new List<string>();
+        }
         public void AddItem(string id)
         {
             if (!Contains(id)) _itemsID.Add(id);
+            
         }
 
         public bool Contains(string id) => _itemsID.Contains(id);

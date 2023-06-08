@@ -19,7 +19,8 @@ namespace Game.Controllers
 
         public BackGroundController( 
             IReadOnlySubscriptionProperty<float> left,
-            IReadOnlySubscriptionProperty<float> right)
+            IReadOnlySubscriptionProperty<float> right,
+            Profile profile)
         {
             ///////////////[BackGround]\\\\\\\\\\\\\\
             ///
@@ -30,7 +31,7 @@ namespace Game.Controllers
             _rightMove.Subscribe(UpdateTilesRight);
 
             _view = LoadView();
-            _view.Init(_diff);
+            _view.Init(_diff, profile.Car);
         }
         public override void OnDisposable()
         {

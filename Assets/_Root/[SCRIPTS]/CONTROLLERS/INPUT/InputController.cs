@@ -1,18 +1,13 @@
-
 using Game.Models;
 using Game.UI;
-using System.Collections;
-using System.Collections.Generic;
 using Tools;
 using Tools.React;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Game.Controllers
 {
     internal class InputController : BaseController
-    {
-         
+    { 
         private BaseInputView _view;
         private readonly Profile _profile;
 
@@ -25,6 +20,7 @@ namespace Game.Controllers
             _profile = profile;
             _view = LoadView();
             _view.Init(left,right);
+            _view.InitBackMethod(BackToMenu);
         }
         private KeyWordInputView LoadView(Transform placeForUI = null)
         {
@@ -34,6 +30,6 @@ namespace Game.Controllers
             return viewOnScene.GetComponent<KeyWordInputView>();
         }
 
-        
+        private void BackToMenu() => _profile._reactGameState.Value = GameState.Menu;
     }
 }

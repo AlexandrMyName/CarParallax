@@ -1,6 +1,4 @@
 using Game.Models;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Controllers
@@ -13,6 +11,7 @@ namespace Game.Controllers
         private MainMenuController _menuMainController;
         private SettingsController _settingsController;
         private GameController _gameController;
+        private GarageController _garageController;
         public MainController(Profile profile,Transform placeForUI)
         {
             _placeForUI = placeForUI;
@@ -42,18 +41,22 @@ namespace Game.Controllers
                     _menuMainController = new MainMenuController(_profile, _placeForUI);
                     _settingsController?.Dispose();
                     _gameController?.Dispose();
+                    _garageController?.Dispose();
                     break;
                 case GameState.Game:
                     _gameController = new GameController(_profile, _placeForUI);
                     _menuMainController?.Dispose();
                     _settingsController?.Dispose();
+                    _garageController?.Dispose();
                     break;
                 case GameState.Settings:
                     _settingsController = new SettingsController(_profile, _placeForUI);
                     _menuMainController?.Dispose();
                     _gameController?.Dispose();
+                    _garageController?.Dispose();
                     break;
                 case GameState.Inventory:
+                    _garageController = new GarageController(_profile, _placeForUI);
                     _menuMainController?.Dispose();
                     _settingsController?.Dispose();
                     _gameController?.Dispose();
@@ -63,6 +66,7 @@ namespace Game.Controllers
                     _menuMainController?.Dispose();
                     _settingsController?.Dispose();
                     _gameController?.Dispose();
+                    _garageController?.Dispose();
                     break;
 
             }
