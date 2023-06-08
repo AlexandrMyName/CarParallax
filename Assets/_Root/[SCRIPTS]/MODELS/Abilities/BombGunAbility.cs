@@ -16,7 +16,15 @@ namespace Game.Models
 
         void IAbility.Apply(IAbilityActivator activator)
         {
-            var rb = GameObject.Instantiate(_config.Projectile).GetComponent<Rigidbody2D>();
+            var rb = GameObject.Instantiate(_config.Projectile, 
+                new Vector3(
+                    activator.ViewGameObject.transform.position.x,
+                    activator.ViewGameObject.transform.position.y + 0.7f,
+                    activator.ViewGameObject.transform.position.z
+
+                    ),Quaternion.identity
+
+                ) .GetComponent<Rigidbody2D>();
 
             Vector3 force = activator.ViewGameObject.transform.right * _config.Value;
 
