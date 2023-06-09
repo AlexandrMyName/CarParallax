@@ -1,10 +1,7 @@
 using Configs.Inventory;
 using Game.Inventory;
 using Game.UI;
-using System.Collections;
-using System.Collections.Generic;
 using Tools;
-using Tools.Generic;
 using UnityEngine;
 
 namespace Game.Controllers
@@ -38,7 +35,7 @@ namespace Game.Controllers
         {
             var configs = ResourcesLoader.LoadPrefab<DataBaseItemsConfig>(_pathItemConfigs);
             var repository = new ItemRepository(configs.Configs);
-            AddRepository(repository);
+            AddDisposableObject(repository);
             return repository;
         }
         private InventoryView LoadView(Transform placeForUI = null)

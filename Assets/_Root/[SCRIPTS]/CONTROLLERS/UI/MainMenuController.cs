@@ -17,6 +17,7 @@ namespace Game.Controllers
             _view = LoadView(placeForUI);
             _view.Init(OnStartGame, OnSettings, OnGarage);
         }
+       
         private MainMenuView LoadView(Transform placeForUI = null)
         {
             GameObject prefab = ResourcesLoader.LoadPrefab<GameObject>(_pathTool);

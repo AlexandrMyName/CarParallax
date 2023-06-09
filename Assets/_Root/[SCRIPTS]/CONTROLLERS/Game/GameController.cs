@@ -23,10 +23,10 @@ namespace Game.Controllers
             _inputController = new InputController(profile, _leftMove, _rightMove);
             _backGroundController = new BackGroundController(_leftMove, _rightMove,profile);
             _abilityController = new AbilityController(placeForUI, _carController, profile);
-            AddController(_carController);
-            AddController(_backGroundController);
-            AddController(_inputController);
-            AddController(_abilityController);
+            AddDisposableObject(_carController);
+            AddDisposableObject(_backGroundController);
+            AddDisposableObject(_inputController);
+            AddDisposableObject(_abilityController);
         }
 
         

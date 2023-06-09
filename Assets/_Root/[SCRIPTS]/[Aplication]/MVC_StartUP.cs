@@ -2,22 +2,26 @@ using Game.Controllers;
 using Game.Models;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Game.Main
 {
     internal class MVC_StartUP : MonoBehaviour
     {
         
-        [SerializeField] private float _defaultSpeed;
-        [SerializeField] private Transform _placeForUI;
+   
 
         private Profile _profile;
         private MainController _mainController;
 
-        private void Awake()
-        {    
-            _profile = new Profile(_defaultSpeed,GameState.Menu);
-            _mainController = new MainController(_profile, _placeForUI);
+ 
+        [Inject]
+        private void  AddDependence(Profile profile, MainController mainCntrl)
+        {
+            _profile = profile;
+            _mainController = mainCntrl;
+            
+
         }
         private void OnDestroy() => _mainController?.Dispose();
        

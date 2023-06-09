@@ -36,7 +36,7 @@ namespace Game.Controllers
         {
             var configs = ResourcesLoader.LoadPrefab<DataBaseUpgradableItemConfig>(_pathItemUpgradeConfigs);
             var repository = new  UpgradableItemRepository(configs.Configs);
-            AddRepository(repository);
+            AddDisposableObject(repository);
             return repository;
         }
         private GarageView LoadView(Transform placeForUI = null)
@@ -50,7 +50,7 @@ namespace Game.Controllers
         {
              
             var inventoryCntr = new InventoryController(placeForUI, profile._inventory);
-            AddController(inventoryCntr);
+            AddDisposableObject(inventoryCntr);
 
             return inventoryCntr;
         }
@@ -66,6 +66,7 @@ namespace Game.Controllers
             _profile._reactGameState.Value = GameState.Menu;
         }
 
+        
         private void TryUpgradeItems(IEnumerable<string> items,
              IUpgradable upgradableModel,
              IReadOnlyDictionary<string,IUpgabableHandler> handlers

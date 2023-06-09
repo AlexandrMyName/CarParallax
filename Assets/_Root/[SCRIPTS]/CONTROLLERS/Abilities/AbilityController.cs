@@ -37,7 +37,7 @@ namespace Game.Controllers
         private AbilityItemRepository LoadRepository(AbilitiesItemConfigsDataBase configs)
         {
             var repository = new AbilityItemRepository(configs.Configs);
-            AddRepository(repository);
+            AddDisposableObject(repository);
             return repository;
         }
         private AbilitiesView LoadView(Transform placeForUI = null)

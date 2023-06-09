@@ -6,15 +6,9 @@ namespace Game.UI
     internal class KeyWordInputView : BaseInputView
     {
         [SerializeField] private float _sensetivity = 1f;
-        private void Awake() => UpdateManager.SubscribeToUpdate(Move);
-        private void OnDestroy()
-        {
-            DeInitBackMethod();
-            UpdateManager.UnsubscribeFromUpdate(Move);
+        
 
-        }
-
-        private void Move()
+        protected override void Move()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
                 BackToMenu();
@@ -25,11 +19,6 @@ namespace Game.UI
 
             if(horizontalAxis > 0) OnRightMove(mainValue);
             else if(horizontalAxis < 0 ) OnLeftMove(mainValue);
-        }
-
-        private void backToMenu()
-        {
-
         }
     }
 }
