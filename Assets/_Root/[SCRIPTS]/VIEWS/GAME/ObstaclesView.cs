@@ -4,31 +4,50 @@ using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.UIElements;
 using Game.Models;
+using System.Collections.Generic;
 
 namespace Game.UI
 {
     internal class ObstaclesView : MonoBehaviour
     {
-         private GameObject _obstacle;
+        [SerializeField] private List<ObstacleObjectView> _obstacleObjectViews;
 
+        private ObstacleObjectView _currentObstacle;
         private IReadOnlySubscriptionProperty<float> _diff;
 
         private Vector3 _cahedPosition;
         float maxTime = 2f;
         float currentTime;
         bool isSleep;
+        int currentObjectIndex;
+        
         CarModel _car;
 
         private void Awake()
         {
-            _obstacle = GameObject.Find("Obstacle");
+            currentObjectIndex = 0;
             
             currentTime = maxTime;
-            _cahedPosition = _obstacle.transform.position;
+            _cahedPosition = _obstacleObjectViews[0].transform.position;
         }
-        private void OnDestroy()
+        private void SetNextObstacle()
         {
-            
+
+        }
+        private void DisposeObstacles()
+        {
+            foreach(var obstacle in _obstacleObjectViews)
+            {
+                obstacle.transform.position = _cahedPosition;
+                obstacle.gameObject.SetActive(false);
+            }
+        }
+        private void SetCurrentObstacle()
+        {
+            currentObjectIndex = (currentObjectIndex + 1) % _obstacleObjectViews.Count;
+            Debug.Log(currentObjectIndex);
+            _obstacleObjectViews[currentObjectIndex].gameObject.SetActive(true);
+            _currentObstacle = _obstacleObjectViews[currentObjectIndex];
         }
         public void Init(IReadOnlySubscriptionProperty<float> diff, CarModel car)
         {
@@ -37,31 +56,31 @@ namespace Game.UI
             _diff.Subscribe(Move);
         }
 
-
+       
         private void Move(float value)
         {
-            currentTime -= Time.deltaTime * 0.5f;
+            bool isCarViewThis = _currentObstacle != null ? _currentObstacle.IsCarInView : false;
+
+            if (value != 0  && !isCarViewThis)
+                    currentTime -= Time.deltaTime * 0.5f;
 
             if(currentTime <= 0)
             {
                 currentTime = maxTime;
-                _obstacle.transform.position = _cahedPosition;
+                DisposeObstacles();
                 SetSleep();
-                if(!isSleep)
-                _obstacle.SetActive(true);
+                if (!isSleep)
+                    SetCurrentObstacle();
             }
              
-            if (!isSleep)
+            if (!isSleep && _currentObstacle != null)
             {
                 
-                    Vector3 position = _obstacle.transform.position;
+                    Vector3 position = _currentObstacle.transform.position;
 
                     position -= Vector3.right * value * 3 * (_car.Speed / 2);
-                   
-                    _obstacle.transform.position = position;
-                 
-                 
 
+                _currentObstacle.transform.position = position;
             }
 
 

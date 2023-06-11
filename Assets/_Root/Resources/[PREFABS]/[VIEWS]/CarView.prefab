@@ -121,9 +121,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6858249838095562221}
   - component: {fileID: 370074079826367848}
-  - component: {fileID: 1545361175158407828}
-  - component: {fileID: 4637946483401348534}
-  - component: {fileID: 5132799391584740508}
+  - component: {fileID: 2660876219738932617}
+  - component: {fileID: 6888903491214003708}
   m_Layer: 0
   m_Name: TruckWheelSprite (2)
   m_TagString: Untagged
@@ -139,7 +138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2860073912335114886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.42, y: -1.29, z: 0}
+  m_LocalPosition: {x: -1.402, y: -1.097, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -198,7 +197,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1545361175158407828
+--- !u!50 &2660876219738932617
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2860073912335114886}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &6888903491214003708
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,57 +256,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.015175581}
+  m_Offset: {x: -0.013831258, y: -0.00000012910603}
   serializedVersion: 2
-  m_Radius: 0.9613147
---- !u!50 &4637946483401348534
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2860073912335114886}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 1
---- !u!231 &5132799391584740508
-SpringJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2860073912335114886}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 3299939414157053304}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 0
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.42, y: -1.29}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.005
-  m_DampingRatio: 0.2
-  m_Frequency: 0
+  m_Radius: 0.9434427
 --- !u!1 &3431216865104398511
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,9 +269,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8083937754566718384}
   - component: {fileID: 6087227522316351681}
-  - component: {fileID: 7390001508300934245}
-  - component: {fileID: 7189419374977579238}
-  - component: {fileID: 4558108010827930001}
+  - component: {fileID: 5338199518687749898}
+  - component: {fileID: 6570260928208713669}
   m_Layer: 0
   m_Name: TruckWheelSprite
   m_TagString: Untagged
@@ -309,7 +286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3431216865104398511}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.61, y: -1.29, z: 0}
+  m_LocalPosition: {x: 1.574, y: -1.097, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -368,7 +345,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7390001508300934245
+--- !u!50 &5338199518687749898
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3431216865104398511}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &6570260928208713669
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,57 +404,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.015175581}
+  m_Offset: {x: -0.004610247, y: -0.00000012910603}
   serializedVersion: 2
-  m_Radius: 0.9613147
---- !u!50 &7189419374977579238
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3431216865104398511}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 1
---- !u!231 &4558108010827930001
-SpringJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3431216865104398511}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 3299939414157053304}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 0
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.61, y: -1.29}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.005
-  m_DampingRatio: 0.2
-  m_Frequency: 0
+  m_Radius: 0.934222
 --- !u!1 &5247286716567195228
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,10 +549,12 @@ GameObject:
   - component: {fileID: 6818751615605683664}
   - component: {fileID: 8242937944858763434}
   - component: {fileID: 3299939414157053304}
-  - component: {fileID: 632910278264240647}
+  - component: {fileID: 8604467569988284858}
+  - component: {fileID: 7746708291120080407}
+  - component: {fileID: 8886314644509954883}
   m_Layer: 0
   m_Name: CarView
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,7 +575,7 @@ Transform:
   - {fileID: 8083937754566718384}
   - {fileID: 6858249838095562221}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8242937944858763434
 MonoBehaviour:
@@ -644,8 +602,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 1.0950973
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -660,8 +618,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 1
---- !u!61 &632910278264240647
-BoxCollider2D:
+--- !u!60 &8604467569988284858
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -692,7 +650,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08137798, y: 0.16965726}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -702,6 +660,77 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.295722, y: 0.7820906}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.1824324, y: -0.2146855}
+      - {x: 2.413063, y: -0.23233065}
+      - {x: 2.3561704, y: 0.2346408}
+      - {x: 2.2287216, y: 0.52261436}
+      - {x: 1.4349889, y: 0.5893618}
+      - {x: 0.6881181, y: 1.1832554}
+      - {x: -0.08107292, y: 1.2432187}
+      - {x: -0.20094773, y: 1.0398118}
+      - {x: -0.76087236, y: 0.587732}
+      - {x: -2.0590532, y: 0.5387236}
+      - {x: -2.050622, y: 0.23847383}
+      - {x: -2.2618556, y: -0.1112301}
+      - {x: -2.081234, y: -0.2619827}
+      - {x: -1.8623916, y: -0.028143823}
+      - {x: -1.5983924, y: 0.09788391}
+      - {x: -1.1017979, y: 0.06903151}
+      - {x: -0.70125645, y: -0.17268683}
+      - {x: -0.5472486, y: -0.24150658}
+      - {x: 0.817492, y: -0.28204292}
+      - {x: 1.16566, y: 0.07056223}
+      - {x: 1.7077372, y: 0.09282273}
+  m_UseDelaunayMesh: 0
+--- !u!235 &7746708291120080407
+WheelJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7954693266069986055}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 5338199518687749898}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 0
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 1.574, y: -1.097}
+  m_ConnectedAnchor: {x: 0.000000002865164, y: 0.000000033173194}
+  m_Suspension:
+    m_DampingRatio: 0.7
+    m_Frequency: 7
+    m_Angle: 90
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+--- !u!235 &8886314644509954883
+WheelJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7954693266069986055}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 2660876219738932617}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 0
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: -1.402, y: -1.097}
+  m_ConnectedAnchor: {x: 0.00000003116419, y: 0.000000033173194}
+  m_Suspension:
+    m_DampingRatio: 0.7
+    m_Frequency: 7
+    m_Angle: 90
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000

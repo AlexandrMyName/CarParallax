@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078cf3c7a09b30345af21b8ca56db992, type: 3}
   m_Name: MainConfig
   m_EditorClassIdentifier: 
-  <EntrySpeedCar>k__BackingField: 12
+  <EntrySpeedCar>k__BackingField: 7
